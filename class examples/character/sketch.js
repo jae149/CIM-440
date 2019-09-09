@@ -1,7 +1,7 @@
 var mouthX = 80;
 var mouthY = 200;
 
-var eyeSize = 40
+var eyeSize = 40;
 
 
 function setup() {
@@ -12,6 +12,7 @@ function setup() {
 
 function draw() {
   // put drawing code here
+
 strokeWeight(1); //to prevent srtokewight 5 from affecting ellipses and rect
 //left eye
 //  ellipse(100,100,20,20);
@@ -39,7 +40,7 @@ line(80,215,180,215);//(x&y of left point of line, x&y of right point of line)
 //console.log("width " + width);
 //console.log("height " + height);
 
-triangle(width/2,height/2,(width/2)+10,(height/2)+20,(width/2)-10,(height/2)+20);//(x&y of top point,x&ys of two other points)
+triangle(width/2,height/2,(width/2)+10,(height/2)+20,(width/2)-10,(height/2)+20);//(x&y of top point,x&ys of two other points) (x,y,x,y,x,y)
 
 arc(50,50,50,50,0,PI);//0 to pi (180)
 arc(300,300,50,50,0,TWO_PI);//0-360
