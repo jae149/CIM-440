@@ -1,8 +1,7 @@
+//these variable are available thru entire program
 var pointX = 0;
 var pointY = 0;
-
 var point2; // variable undefined
-
 var faceColor = "Blue";
 
 function setup() {
@@ -10,10 +9,10 @@ function setup() {
   createCanvas(500,500);
   pointX = width/2;
   pointY = height/2;
-
   console.log("pointX " + pointX + " pointY " + pointY);
+console.log(point2);
+var message = "Hello";//scope of this variable only available in setup function
 
-  console.log(point2);
 }
 
 function draw() {
