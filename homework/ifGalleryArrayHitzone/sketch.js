@@ -54,6 +54,6 @@ function mousePressed(){
 
     if(currentImage == -1){
       currentImage = 4;
-    }
-    }
+    }//end of condition inside else if
+  }//end else if
 }//end of mousePressed
