@@ -1,3 +1,5 @@
+//background image:"Stars" by RebeccaBarray is licensed under CC BY-NC-SA 2.0 <p style="font-size: 0.9rem;font-style: italic;"><a href="https://www.flickr.com/photos/80460384@N06/7846935872">"Stars"</a><span>by <a href="https://www.flickr.com/photos/80460384@N06">RebeccaBarray</a></span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY-NC-SA 2.0</a><a href="https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;opacity: .7;margin-top: 2px;margin-left: 3px;height: 22px !important;"><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-nc_icon.svg" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-sa_icon.svg" /></a></p>
+
 var questions = ["Select your pumpkin", "Select eye shape", "Select nose shape","Select mouth shape"];
 var options = ["1) wide 2) round 3) tall","1) triangles 2) upside-down triangles 3) circles", "1) triangle 2) upside-down triangle 3) skeleton nostrils", "1) smile 2) surprise 3) rectangle"];
 var answers = [-1,-1,-1,-1];
@@ -9,6 +11,8 @@ var currentOption = -1;//waiting for person to interact
 var currentQuestion = 0;
 
 var answerText = "";
+
+var skyImage;
 
 var leafX = [];
 var leafY = [];
@@ -26,6 +30,7 @@ var pumpkinHeight3;
 
 function preload(){
 leafImage = loadImage("https://openclipart.org/image/300px/svg_to_png/257622/1470680735.png");
+skyImage = loadImage("starry sky.jpg");
 }
 
 function setup() {
@@ -63,6 +68,8 @@ function setup() {
 function draw() {
   // put drawing code here
 
+
+
   var pumpkinX = width/2;
   var pumpkinY = (height/2)+55;
   var pumpkinWidth1 = 100;
@@ -73,13 +80,15 @@ function draw() {
   var pumpkinHeight3 = 100;
 
   background(255);
+  image(skyImage, 0,0,skyImage.width, skyImage.height);
   noStroke();
-  fill("black");
+  fill(255);
   text(questions[currentQuestion],300,40);
   text(options[currentQuestion],300,65);
 
   text(answerText, 20, 200);
 
+  text("Create Your Own Jack-O-Lantern",20,20);
 
 
   if(currentOption != -1){
@@ -88,6 +97,7 @@ function draw() {
     currentQuestion = currentQuestion + 1;//go to next image
 
   currentOption = -1;
+
   }//end of currentOption != -1, != means not equal
 
 
@@ -190,7 +200,7 @@ if(currentQuestion == 4){
   }//end forloop
 
   noStroke();
-  fill("black");
+  fill(255);
   text("Happy Halloween!",20,60);
 
 }//end condition
