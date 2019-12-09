@@ -35,8 +35,19 @@ skyImage = loadImage("starry sky.jpg");
 
 function setup() {
   // put setup code here
+  var cnv =  createCanvas(700,320);
+  cnv.id("myCanvas");
 
-  createCanvas(700,320);
+  var container0 = createDiv();
+  container0.id("container0");
+  // # => designate an id, find an id that = container0
+  // .html injects html or text into another html tag
+
+
+  //to center our container, need to set width and margin:0 auto
+  cnv.parent("#container0");
+
+  //createCanvas(700,320);
 
   fill("black");
   stroke("black");
